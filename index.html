@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашний Озонатор | Научно-исследовательский проект</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .ozone-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .accent-border {
+            border-left: 4px solid #3b82f6;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Header -->
+    <header class="ozone-gradient text-white py-24 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+            </svg>
+        </div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="mb-6 inline-block px-4 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-sm font-medium tracking-wide">
+                Лицей при УлГТУ | Естественно-научное направление
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Генератор озона в домашних условиях</h1>
+            <p class="text-xl opacity-80 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+                Исследовательская работа по созданию устройства для демонстрации коронного разряда и свойств озона.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#components" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">
+                    К списку деталей
+                </a>
+                <a href="#documentation" class="bg-white/10 backdrop-blur text-white border border-white/20 px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition">
+                    Документация
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Info -->
+    <section id="documentation" class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-2xl shadow-sm accent-border">
+                <h3 class="text-lg font-bold mb-2">Цель проекта</h3>
+                <p class="text-slate-600 text-sm">Сборка действующей модели генератора озона для изучения его свойств в лабораторных условиях.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm accent-border">
+                <h3 class="text-lg font-bold mb-2">Актуальность</h3>
+                <p class="text-slate-600 text-sm">Изучение эффективных методов очистки воздуха и воды с помощью мощного природного окислителя.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm accent-border">
+                <h3 class="text-lg font-bold mb-2">Бюджет</h3>
+                <p class="text-slate-600 text-sm">Стоимость сборки прибора составляет менее 2000 рублей, что делает его доступным для кружков.</p>
+            </div>
+        </div>
+
+        <div class="prose prose-slate max-w-none">
+            <h2 class="text-3xl font-bold mb-6">Научное обоснование</h2>
+            <p class="mb-6 leading-relaxed">
+                Генератор озона (озонатор) — это устройство, предназначенное для получения озона ($O_3$) из кислорода ($O_2$), содержащегося в воздухе. В основе данного прибора лежит принцип <strong>барьерного разряда</strong>. Под воздействием высокого напряжения (15 кВ) молекулы кислорода расщепляются на атомы, которые затем соединяются, образуя трехатомные молекулы озона.
+            </p>
+            
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 my-8">
+                <h4 class="text-yellow-800 font-bold mb-2 flex items-center">
+                    <i class="fas fa-biohazard mr-2"></i> Техника безопасности (ГОСТ 12.1.007-76)
+                </h4>
+                <ul class="text-yellow-900 text-sm space-y-2">
+                    <li>• Озон ни в коем случае нельзя вдыхать.</li>
+                    <li>• Предельно допустимая концентрация (ПДК) в воздухе лаборатории — 0,1 мг/м³.</li>
+                    <li>• Прибор создает высокое напряжение — исключите доступ детей и животных.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components -->
+    <section id="components" class="py-20 bg-slate-100 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Список материалов и компонентов</h2>
+                <p class="text-slate-600">Для сборки были использованы следующие комплектующие с маркетплейса Ozon</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Item 1 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col">
+                    <div class="h-48 bg-white rounded-xl mb-4 flex items-center justify-center border border-slate-200 overflow-hidden p-4">
+                        <img src="https://ir-3.ozone.ru/s3/multimedia-i/wc1000/6665147046.jpg" alt="Преобразователь" class="product-image" onerror="this.src='https://via.placeholder.com/400x400?text=Преобразователь'">
+                    </div>
+                    <h3 class="font-bold mb-2">Преобразователь 5V в 15kV</h3>
+                    <p class="text-xs text-slate-500 mb-4 flex-grow">Сердце прибора. Создает высокое напряжение для пробоя воздуха внутри пробирки.</p>
+                    <div class="bg-red-50 text-red-600 p-2 rounded text-[10px] mb-4 uppercase font-bold tracking-wider">
+                        <i class="fas fa-exclamation-circle mr-1"></i> Осторожно: риск брака у этого продавца
+                    </div>
+                    <a href="https://ozon.ru/t/ifP676R" target="_blank" class="w-full bg-blue-600 text-white text-center py-2.5 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center gap-2">
+                        <span>Купить на Ozon</span>
+                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col">
+                    <div class="h-48 bg-white rounded-xl mb-4 flex items-center justify-center border border-slate-200 overflow-hidden p-4">
+                        <img src="https://atl-ltd.ru/wp-content/uploads/2022/05/Probirka-steklyannaya-biologicheskaya-PB2-21-200.jpg" alt="Пробирка" class="product-image" onerror="this.src='https://via.placeholder.com/400x400?text=Пробирка'">
+                    </div>
+                    <h3 class="font-bold mb-2">Стеклянная пробирка</h3>
+                    <p class="text-xs text-slate-500 mb-4 flex-grow">Выступает в роли диэлектрика. Необходима для безопасной работы прибора.</p>
+                    <a href="https://ozon.ru/t/wWeK0R5" target="_blank" class="w-full bg-blue-600 text-white text-center py-2.5 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center gap-2">
+                        <span>Купить на Ozon</span>
+                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col">
+                    <div class="h-48 bg-white rounded-xl mb-4 flex items-center justify-center border border-slate-200 overflow-hidden p-4">
+                        <img src="https://ir-3.ozone.ru/s3/multimedia-9/wc1000/6252591057.jpg" alt="Разъем 5.5" class="product-image" onerror="this.src='https://via.placeholder.com/400x400?text=Разъем+5.5'">
+                    </div>
+                    <h3 class="font-bold mb-2">Разъём 5.5 мм</h3>
+                    <p class="text-xs text-slate-500 mb-4 flex-grow">Для удобного подключения внешнего питания к корпусу озонатора.</p>
+                    <a href="https://ozon.ru/t/WN6RXmV" target="_blank" class="w-full bg-blue-600 text-white text-center py-2.5 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center gap-2">
+                        <span>Купить на Ozon</span>
+                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col">
+                    <div class="h-48 bg-white rounded-xl mb-4 flex items-center justify-center border border-slate-200 overflow-hidden p-4">
+                        <img src="https://ir-3.ozone.ru/s3/multimedia-g/wc1000/6415881592.jpg" alt="Блок питания" class="product-image" onerror="this.src='https://via.placeholder.com/400x400?text=Блок+питания'">
+                    </div>
+                    <h3 class="font-bold mb-2">Блок питания 5V</h3>
+                    <p class="text-xs text-slate-500 mb-4 flex-grow">Стабильный источник питания для работы преобразователя.</p>
+                    <a href="https://ozon.ru/t/OLteKEc" target="_blank" class="w-full bg-blue-600 text-white text-center py-2.5 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center gap-2">
+                        <span>Купить на Ozon</span>
+                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col">
+                    <div class="h-48 bg-white rounded-xl mb-4 flex items-center justify-center border border-slate-200 overflow-hidden p-4">
+                        <img src="https://ir-3.ozone.ru/s3/multimedia-7/wc1000/6731826235.jpg" alt="Разъем XT60" class="product-image" onerror="this.src='https://via.placeholder.com/400x400?text=Разъем+XT60'">
+                    </div>
+                    <h3 class="font-bold mb-2">Разъём XT60</h3>
+                    <p class="text-xs text-slate-500 mb-4 flex-grow">Используется для надежного разъемного соединения основного блока и разрядной пары.</p>
+                    <a href="https://ozon.ru/t/7WNAMfh" target="_blank" class="w-full bg-blue-600 text-white text-center py-2.5 rounded-lg hover:bg-blue-700 transition font-medium flex items-center justify-center gap-2">
+                        <span>Купить на Ozon</span>
+                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Logic -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">Алгоритм сборки</h2>
+        <div class="space-y-6">
+            <div class="flex gap-6 items-start">
+                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex-shrink-0 flex items-center justify-center font-bold">1</div>
+                <div>
+                    <h4 class="font-bold text-lg">Подготовка разрядника</h4>
+                    <p class="text-slate-600">Вставьте разрядник в пробирку до конца. Убедитесь в герметичности крышки.</p>
+                </div>
+            </div>
+            <div class="flex gap-6 items-start">
+                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex-shrink-0 flex items-center justify-center font-bold">2</div>
+                <div>
+                    <h4 class="font-bold text-lg">Подключение к основному блоку</h4>
+                    <p class="text-slate-600">Подключите разрядник к основному блоку через защищенный разъём XT60.</p>
+                </div>
+            </div>
+            <div class="flex gap-6 items-start">
+                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex-shrink-0 flex items-center justify-center font-bold">3</div>
+                <div>
+                    <h4 class="font-bold text-lg">Питание устройства</h4>
+                    <p class="text-slate-600">Подключите устройство к блоку питания — прибор начнет свою работу. Вы почувствуете характерный запах озона через несколько секунд.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References -->
+    <section class="py-20 bg-slate-900 text-slate-300 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-bold mb-8 text-white">Список литературы</h2>
+            <ul class="space-y-4 text-sm opacity-80 italic">
+                <li>• Штокман Е.А. Очистка воздуха. – Москва: Издательство ассоциации строительных ВУЗов, 2006.</li>
+                <li>• Фрог Б.Н., Левченко А.П. Водоподготовка: Учебное пособие для вузов. – Москва: МГУ, 1996.</li>
+                <li>• ГОСТ 12.1.007-76. Система стандартов безопасности труда. Вредные вещества.</li>
+                <li>• Озон [Электронный ресурс]: интернет-энциклопедия Wikipedia.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 px-6 text-center text-slate-500 text-xs border-t border-slate-800">
+        <div class="max-w-5xl mx-auto">
+            <p class="mb-2 text-slate-400">Выполнил: Игонин Андрей, 9 Б класс. Руководитель: Семаева Л.В.</p>
+            <p>© 2026 Проект «Генератор озона в домашних условиях». Ульяновск.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
